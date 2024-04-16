@@ -29,7 +29,7 @@ var translations = {
     },
     "Solar": {
         "en": "Solar System",
-        "pl": "Uklad Słoneczny"
+        "pl": "Układ Słoneczny"
     },
     "SolarDes": {
         "en": "Solar system simulation",
@@ -85,7 +85,15 @@ var translations = {
     },
     "ProjectButton": {
         "en": "Go to project",
-        "pl": "Przejdź do projktu"
+        "pl": "Przejdź do projektu"
+    },
+    "KliTrans": {
+        "en": "Network service clients",
+        "pl": "Klienci Usług Sieciowych"
+    },
+    "KliDes": {
+        "en": "API information service",
+        "pl": "Serwis informacyjny API"
     },
 
 };
@@ -94,7 +102,6 @@ var translations = {
 function switchLanguageFromURL() {
     var urlParams = new URLSearchParams(window.location.search);
     var lang = urlParams.get('lang');
-    console.log("Prawdziwy lang" + lang);
     if (lang && translations[lang]) {
         switchLanguage(lang);
     } else {
@@ -110,7 +117,6 @@ function switchLanguage(language) {
 
         elements.forEach(function(element) {
             var key = element.getAttribute('translation-data');
-            console.log(key);
 
             if (translations[key] && translations[key][language]) {
                 element.textContent = translations[key][language];
